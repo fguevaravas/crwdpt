@@ -1,6 +1,6 @@
 # Random walk animations
 module rwanim
- using LinearAlgebra, SparseArrays, PyPlot, Printf, FFMPEG, ProgressMeter
+ using LinearAlgebra, SparseArrays, PyPlot, Printf, FFMPEG, ProgressMeter, Random
  ⊗ = kron
  zerosum(A) = A - spdiagm(A*ones(size(A,1))) 
  
@@ -23,7 +23,7 @@ module rwanim
     B = findall(vec(B))
 
     # cloaked region
-    rΩ = 0.3
+    rΩ = 0.25
     Ω = [   norm([x1[i1,i2]-0.5,x2[i1,i2]-0.5],2)<=rΩ for i1=1:n1,i2=1:n2]
     Ω = findall(vec(Ω))
 
@@ -107,11 +107,15 @@ module rwanim
  # T = how far a part batches of walkers are released
  # k = how many batches of walkers are released at a time
  # transitions: whether to plot the transitions
- # note: running this function generates 3*nsteps frames (png files) in directory `frames`
- # which is created automatically
- function test_animation(n1=20,n2=20,nsteps=600,T=50,k=100)
+ # note: running this function generates nsteps frames (png files) in directory `frames`
+ # which is created automatically. This can take a lot of space, but is greatly compressed
+ # defaults: (n1=20,n2=20,nsteps=600,T=10,k=100)
+ function do_animation(n1=20,n2=20,nsteps=1200,T=100,k=50)
    # create directory for frames (ignoring errors)
    try mkdir("frames") catch end
+
+   # initialize random seed for reproducibility
+   Random.seed!(4)
 
    # generate graph and extract trace operators
    G = generate_lattice(n1,n2)
@@ -198,10 +202,15 @@ module rwanim
    close(fig)
  end
 
- function makevid()
+ function do_video()
    # generate video
-   ffmpeg_exe(`-framerate 30 -i frames/frame%07d.png 
+   ffmpeg_exe(`-framerate 60 -i frames/frame%07d.png 
                -filter_complex "format=yuv420p"
                -y -vcodec libx264 rwvideo.mp4`)
+ end
+
+ function do_animation_and_video()
+   do_animation()
+   do_video()
  end
 end
