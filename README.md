@@ -2,6 +2,10 @@
 This code reproduces the figures in the manuscript _Cloaking for random walks using a discrete potential theory_ by Trent DeGiovanni and Fernando Guevara Vasquez.
 
 ## Instructions
+Most of the code in this repository is written in [Julia]([https://julialang.org/), either as standalone scripts (`.jl` extension) or Jupyter notebooks (`.ipynb` extension). The file `Project.toml` contains the package dependencies that are not part of the Julia distribution, as of version 1.10.
+* The figures for the paper can be reproduced using the Jupyter notebook `RW_cloaking_demo.ipynb`. The file `RWC.jl` needs to be in the same directory as `RW_cloaking_demo.ipynb`.
+* The discrete potential theory identities are validated numerically on a random graph in the Jupyter notebook `validation.ipynb`.
+* The animations for random walks can be reproduced using `rwanim.jl`. This is the only standalone script. To run it, change directory to the location of this repository and activate the environment (see these [instructions](https://pkgdocs.julialang.org/v1/environments/) or type `]activate .` in the Julia REPL). **FIXME: need more explanations**
 
 ## Funding
 This project was partially funded by the National Science Foundation Grants DMS-2008610 and DMS-2136198.
