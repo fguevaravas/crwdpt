@@ -1,3 +1,6 @@
 .*.swp
 *~
 Manifest.toml
+rwvideo.mp4
+.DS_Store
+frames
