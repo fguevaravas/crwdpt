@@ -1,5 +1,7 @@
 # Cloaking for random walks using a discrete potential theory
-This code reproduces the figures in the manuscript _Cloaking for random walks using a discrete potential theory_ by Trent DeGiovanni and Fernando Guevara Vasquez.
+This code reproduces the figures in the manuscript _Cloaking for random walks using a discrete potential theory_ by Trent DeGiovanni and Fernando Guevara Vasquez. 
+
+For the associated preprint see: [arXiv:2405.07961](https://arxiv.org/abs/2405.07961).
 
 ## Instructions
 Most of the code in this repository is written in [Julia]([https://julialang.org/), either as standalone scripts (`.jl` extension) or Jupyter notebooks (`.ipynb` extension). The file `Project.toml` contains the package dependencies that are not part of the Julia distribution, as of version 1.10.
