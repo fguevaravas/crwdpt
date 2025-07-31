@@ -494,9 +494,9 @@ end#struct
    p= graphplot(g,x = gd.locx, y= gd.locy, nodecolor = nodefillc,nodesize = 1.0, size = size, annotationfontsize=an_size)
    if labels == "yes"
       annotate!(0.0,-1,"B")
-      annotate!(3.0,-1,"I")
+      annotate!(3.0,-1,"Ω⁺")
       annotate!(6.0,-1,"∂Ω")
-      annotate!(9.0,-1,"Ω", fontsize = 100)
+      annotate!(9.0,-1,"Ω⁻", fontsize = 100)
    end
 
    if save == "yes"
