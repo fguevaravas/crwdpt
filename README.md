@@ -1,4 +1,4 @@
-# Cloaking for random walks using a discrete potential theory
+# A potential theory on weighted graphs 
 This code reproduces the figures in the manuscript _A potential theory on weighted graphs_ by Trent DeGiovanni and Fernando Guevara Vasquez. 
 
 For the associated preprint see: [arXiv:2405.07961](https://arxiv.org/abs/2405.07961).
