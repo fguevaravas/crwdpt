@@ -1,7 +1,7 @@
-# A potential theory on weighted graphs 
-This code reproduces the figures in the manuscript _A potential theory on weighted graphs_ by Trent DeGiovanni and Fernando Guevara Vasquez. 
+# Boundary integral equations on weighted graphs 
+This code reproduces the figures in the manuscript _Boundary integral equations on weighted graphs_ by Trent DeGiovanni and Fernando Guevara Vasquez. This work was entitled _A potential theory on weighted graphs_, but the title was changed in revision to emphasize our main contributions.
 
-For the associated preprint see: [arXiv:2405.07961](https://arxiv.org/abs/2405.07961).
+For the associated preprint see: [arXiv:2405.07961](https://arxiv.org/abs/2405.07961). The manuscript has been accepted in the SIAM Journal on Applied Mathematics and is to appear.
 
 ## Instructions
 Most of the code in this repository is written in [Julia]([https://julialang.org/), either as standalone scripts (`.jl` extension) or Jupyter notebooks (`.ipynb` extension). The file `Project.toml` contains the package dependencies that are not part of the Julia distribution, as of version 1.10.
